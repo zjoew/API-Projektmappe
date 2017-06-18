@@ -14,9 +14,13 @@ void setup() {
   pinMode(9,INPUT);
   pinMode(7,INPUT);
   pinMode(13,OUTPUT);
+  digitalWrite(13,HIGH);
   lcd.begin(16,2);
-  lcd.print("Guten Tag!");
-  delay(3000);
+  lcd.clear();
+  lcd.print("Guten Tag,Boys!");
+  lcd.setCursor(3,1);
+  lcd.print("<Arduino>");
+  delay(5000);
 }
 
 void loop() {
@@ -25,29 +29,35 @@ void loop() {
   if (val)
     {
       lcd.clear();
-      lcd.setCursor(0,0);
       lcd.cursor();
       lcd.blink();
+      digitalWrite(13,LOW);
+      delay(300);
       digitalWrite(13,HIGH);
       delay(300);
       digitalWrite(13,LOW);
       delay(300);
       digitalWrite(13,HIGH);
-      delay(200);
+      delay(300);
       digitalWrite(13,LOW);
-      delay(200);
+      delay(300);
       digitalWrite(13,HIGH);
-      delay(100);
+      delay(300);
       digitalWrite(13,LOW);
-      delay(100);
       lcd.print("Abstand:");
-      lcd.setCursor(0,1);
+      lcd.setCursor(3,1);
       lcd.print(d);
-      lcd.print(" mm");
-      delay(3000);
+      lcd.print("mm");
+      delay(5000);
     }
   else
     {
-      digitalWrite(13,LOW);
+      digitalWrite(13,HIGH);
+      lcd.clear();
+      lcd.cursor();
+      lcd.blink();
+      lcd.print("No signal...");
+      lcd.setCursor(12,1);
+      lcd.print(millis()/1000);
     }
 }
