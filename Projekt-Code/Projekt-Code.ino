@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   boolean val = digitalRead(7);
-  unsigned long d = ultras()*10/58;
+  unsigned long d;
   if (val)
     {
       lcd.clear();
@@ -41,6 +41,7 @@ void loop() {
       delay(300);
       digitalWrite(13,LOW);
       delay(300);
+      d = ultras()*10/58;
       digitalWrite(13,HIGH);
       delay(300);
       digitalWrite(13,LOW);
