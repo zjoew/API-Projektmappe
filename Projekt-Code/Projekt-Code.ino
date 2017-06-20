@@ -43,7 +43,7 @@ void loop() {
       delay(300);
       d = ultras()*10/58;
       digitalWrite(13,HIGH);
-      delay(300);
+      delay(500);
       digitalWrite(13,LOW);
       lcd.print("Abstand:");
       lcd.setCursor(3,1);
