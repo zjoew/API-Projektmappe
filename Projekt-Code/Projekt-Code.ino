@@ -14,6 +14,7 @@ void setup() {
   pinMode(9,INPUT);
   pinMode(7,INPUT);
   pinMode(13,OUTPUT);
+  pinMode(8,OUTPUT);
   digitalWrite(13,HIGH);
   lcd.begin(16,2);
   lcd.clear();
@@ -42,8 +43,10 @@ void loop() {
       digitalWrite(13,LOW);
       delay(300);
       d = ultras()*10/58;
+      digitalWrite(8,HIGH);
       digitalWrite(13,HIGH);
       delay(500);
+      digitalWrite(8,LOW);
       digitalWrite(13,LOW);
       lcd.print("Abstand:");
       lcd.setCursor(3,1);
