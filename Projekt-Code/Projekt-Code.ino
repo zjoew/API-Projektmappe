@@ -18,7 +18,7 @@ void setup() {
   digitalWrite(13,HIGH);
   lcd.begin(16,2);
   lcd.clear();
-  lcd.print("Guten Tag,Boys!");
+  lcd.print("Guten Tag, Boys!");
   lcd.setCursor(3,1);
   lcd.print("<Arduino>");
   delay(5000);
