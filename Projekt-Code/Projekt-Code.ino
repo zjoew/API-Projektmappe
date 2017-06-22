@@ -32,6 +32,7 @@ void loop() {
       lcd.clear();
       lcd.cursor();
       lcd.blink();
+      lcd.print("Signal kommt...");
       digitalWrite(13,LOW);
       delay(500);
       digitalWrite(13,HIGH);
@@ -48,6 +49,7 @@ void loop() {
       d = ultras()*10/58;
       digitalWrite(8,LOW);
       digitalWrite(13,LOW);
+      lcd.clear();
       lcd.print("Abstand:");
       lcd.setCursor(3,1);
       lcd.print(d);
