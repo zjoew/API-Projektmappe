@@ -21,8 +21,9 @@ void setup() {
 }
 
 void loop() {
-  unsigned long d = ultras()*10/58;
-  if (d>=5)
+  unsigned long d;
+  d = ultras()/58;
+  if (d > 3)
   {
     lcd.print("Door is open!   ");
   }
