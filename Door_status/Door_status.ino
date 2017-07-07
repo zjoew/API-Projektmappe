@@ -9,6 +9,10 @@ unsigned long ultras()
   return pulseIn(9,HIGH);
 }
 
+  boolean state = true;
+  unsigned long d;
+  int t;  
+
 void setup() {
   pinMode(10,OUTPUT);
   pinMode(9,INPUT);
@@ -21,15 +25,26 @@ void setup() {
 }
 
 void loop() {
-  unsigned long d;
   d = ultras()/58;
   if (d > 3)
   {
+    if (state)
+    {
+      t = millis();
+    }
     lcd.print("Door is open!   ");
+    lcd.setCursor(4,1);
+    lcd.print("before ");
+    lcd.print((millis()-t)/1000);
+    lcd.print("s");
+    state = false;
   }
   else
   {
     lcd.setCursor(8,0);
     lcd.print("closed!");
+    lcd.setCursor(4,1);
+    lcd.print("<Arduino>   ");
+    state = true;
   }
 }
