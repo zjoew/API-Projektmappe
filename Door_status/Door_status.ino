@@ -32,6 +32,7 @@ void loop() {
     {
       t = millis();
     }
+    lcd.home();
     lcd.print("Door is open!   ");
     lcd.setCursor(4,1);
     lcd.print("before ");
@@ -41,8 +42,7 @@ void loop() {
   }
   else
   {
-    lcd.setCursor(8,0);
-    lcd.print("closed!");
+    lcd.print("Door is closed!");
     lcd.setCursor(4,1);
     lcd.print("<Arduino>   ");
     state = true;
